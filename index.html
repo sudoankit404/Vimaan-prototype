@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vimaan — Affordable rides, always on time</title>
+  <meta name="description" content="Vimaan: low fares, more riders than customers, and a ride whenever you need one. 24×7 AI support for every ride, payment or timing issue.">
+  <meta name="theme-color" content="#0f1226">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%235b4bff'/%3E%3Cstop offset='1' stop-color='%2312c2e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Cpath d='M14 30 50 14 40 50 31 37z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="container nav">
+      <a class="logo" href="#top" aria-label="Vimaan home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11.5 21 3l-6 18-3.2-7.8z" fill="#fff"/></svg>
+        </span>
+        <span class="logo-text">vimaan</span>
+      </a>
+      <nav id="nav" class="nav-links" aria-label="Primary">
+        <a href="#rides">Rides</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#ontime">On-time promise</a>
+        <a href="#drive">Drive with us</a>
+        <a href="#faq">FAQ</a>
+        <div class="nav-cta-mobile">
+          <button class="btn btn-ghost" data-open-chat>AI Support</button>
+          <a class="btn btn-primary" href="#book">Book a ride</a>
+        </div>
+      </nav>
+      <div class="nav-cta">
+        <button class="btn btn-ghost" data-open-chat>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+          Support
+        </button>
+        <a class="btn btn-primary" href="#book">Book a ride</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="blob b1" aria-hidden="true"></div>
+      <div class="blob b2" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="pill reveal"><span class="live-dot"></span> More riders online than customers — right now</span>
+          <h1 class="reveal" style="--d:.08s">Ride <span class="grad">smarter</span>.<br>Pay less.<br>Arrive on time.</h1>
+          <p class="lead reveal" style="--d:.16s">Vimaan keeps more riders on the road than customers waiting, so a ride is always minutes away — at fares that never surge.</p>
+          <div class="hero-actions reveal" style="--d:.24s">
+            <a class="btn btn-primary btn-lg" href="#book">Book a ride</a>
+            <a class="btn btn-outline btn-lg" href="#pricing">See how cheap it is</a>
+          </div>
+          <ul class="hero-stats reveal" style="--d:.32s">
+            <li><strong>₹0</strong><span>surge pricing, ever</span></li>
+            <li><strong>Up to <span data-count="30">30</span>%</strong><span>lower fares</span></li>
+            <li><strong>&lt; 5 min</strong><span>typical pickup</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal" style="--d:.18s">
+          <!-- Animated map -->
+          <div class="map-card">
+            <svg class="map" viewBox="0 0 520 600" role="img" aria-label="Animated city map showing Vimaan riders heading to waiting customers">
+              <rect class="bg" width="520" height="600"/>
+              <g class="blocks">
+                <rect x="20" y="20" width="70" height="80" rx="10"/><rect x="130" y="30" width="120" height="70" rx="10"/><rect x="290" y="20" width="90" height="85" rx="10"/><rect x="430" y="30" width="70" height="75" rx="10"/>
+                <rect x="20" y="160" width="70" height="80" rx="10"/><rect x="130" y="150" width="120" height="90" rx="10"/><rect x="290" y="160" width="90" height="80" rx="10"/><rect x="430" y="155" width="70" height="90" rx="10"/>
+                <rect x="20" y="300" width="70" height="90" rx="10"/><rect x="130" y="300" width="120" height="80" rx="10"/><rect x="290" y="305" width="90" height="85" rx="10"/><rect x="430" y="300" width="70" height="90" rx="10"/>
+                <rect x="20" y="450" width="70" height="120" rx="10"/><rect x="130" y="450" width="120" height="120" rx="10"/><rect x="290" y="450" width="90" height="120" rx="10"/><rect x="430" y="450" width="70" height="120" rx="10"/>
+              </g>
+              <g class="roads" fill="none" stroke-linecap="round">
+                <path id="rd1" d="M-10 125H530"/><path id="rd2" d="M-10 270H530"/><path id="rd3" d="M-10 420H530"/>
+                <path id="rd4" d="M110 -10V610"/><path id="rd5" d="M270 -10V610"/><path id="rd6" d="M410 -10V610"/>
+              </g>
+              <path class="route" d="M110 420H270V270H410" fill="none"/>
+              <!-- riders -->
+              <g class="car"><circle r="7"><animateMotion dur="11s" repeatCount="indefinite"><mpath href="#rd1"/></animateMotion></circle></g>
+              <g class="car"><circle r="7"><animateMotion dur="14s" begin="-4s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#rd2"/></animateMotion></circle></g>
+              <g class="car"><circle r="7"><animateMotion dur="12s" begin="-2s" repeatCount="indefinite"><mpath href="#rd3"/></animateMotion></circle></g>
+              <g class="car"><circle r="7"><animateMotion dur="13s" begin="-6s" repeatCount="indefinite"><mpath href="#rd4"/></animateMotion></circle></g>
+              <g class="car"><circle r="7"><animateMotion dur="16s" begin="-9s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#rd5"/></animateMotion></circle></g>
+              <g class="car"><circle r="7"><animateMotion dur="10s" begin="-3s" repeatCount="indefinite"><mpath href="#rd6"/></animateMotion></circle></g>
+              <g class="car hot"><circle r="9"><animateMotion dur="7s" repeatCount="indefinite" path="M110 420H270V270H410"/></circle></g>
+              <!-- customer pins -->
+              <g class="pin" transform="translate(410 270)"><circle class="pulse" r="10"/><circle class="dot" r="7"/></g>
+              <g class="pin" transform="translate(270 125)"><circle class="pulse p2" r="10"/><circle class="dot" r="7"/></g>
+              <g class="pin" transform="translate(110 270)"><circle class="pulse p3" r="10"/><circle class="dot" r="7"/></g>
+            </svg>
+            <div class="map-badge b-top"><span class="live-dot"></span> 6 riders near you</div>
+            <div class="map-badge b-bottom">🚗 Rider arriving in <strong>3 min</strong></div>
+          </div>
+
+          <!-- Booking card -->
+          <form class="book-card" id="book" autocomplete="off" novalidate>
+            <div class="book-head">
+              <h2>Where to?</h2>
+              <span class="tag-green">No surge</span>
+            </div>
+            <div class="route-fields">
+              <div class="field">
+                <span class="dot dot-green" aria-hidden="true"></span>
+                <label class="sr-only" for="pickup">Pickup location</label>
+                <input id="pickup" list="places" placeholder="Pickup location" value="Connaught Place">
+              </div>
+              <button type="button" class="swap" id="swapBtn" aria-label="Swap pickup and drop">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/></svg>
+              </button>
+              <div class="field">
+                <span class="dot dot-red" aria-hidden="true"></span>
+                <label class="sr-only" for="drop">Drop location</label>
+                <input id="drop" list="places" placeholder="Where are you going?" value="IGI Airport T3">
+              </div>
+            </div>
+            <datalist id="places"></datalist>
+
+            <div class="chips" role="radiogroup" aria-label="Ride type" id="rideChips"></div>
+
+            <div class="estimate" aria-live="polite">
+              <div>
+                <span class="est-label">Estimated fare</span>
+                <strong id="estFare">₹—</strong>
+              </div>
+              <div class="est-right">
+                <span id="estMeta">Enter pickup &amp; drop</span>
+                <span class="est-save" id="estSave"></span>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg" id="bookBtn" type="submit">Book ride now</button>
+            <p class="fine">Fixed fare shown upfront. Free cancellation within 2 minutes.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIVE AVAILABILITY ============ -->
+    <section class="live" aria-label="Live rider availability">
+      <div class="container live-grid">
+        <div class="live-intro reveal">
+          <span class="eyebrow">Live availability</span>
+          <h2>Always more riders <span class="grad">than customers.</span></h2>
+          <p>We onboard and balance riders continuously, so supply stays ahead of demand in every zone. That is why you get a ride at 6 AM, at midnight and at 9 PM in the rain.</p>
+        </div>
+        <div class="live-card reveal" style="--d:.1s">
+          <div class="live-row">
+            <div>
+              <span class="live-label"><span class="live-dot"></span> Riders online</span>
+              <strong class="live-num" id="ridersOnline">2,140</strong>
+            </div>
+            <div>
+              <span class="live-label">Customers waiting</span>
+              <strong class="live-num alt" id="custWaiting">1,520</strong>
+            </div>
+            <div class="ratio-box">
+              <span class="live-label">Supply ratio</span>
+              <strong class="live-num grad" id="ratioVal">1.4×</strong>
+            </div>
+          </div>
+          <div class="bars">
+            <div class="bar"><i id="ridersBar" style="width:78%"></i></div>
+            <div class="bar alt"><i id="custBar" style="width:56%"></i></div>
+          </div>
+          <p class="fine">Illustrative live simulation. Supply is always kept above demand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RIDES ============ -->
+    <section class="section" id="rides">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Choose your ride</span>
+          <h2>One app. Five ways to get there.</h2>
+          <p>From a quick bike hop to a family XL, every option is priced below the usual market rate.</p>
+        </div>
+        <div class="ride-grid" id="rideGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section alt-bg" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why Vimaan</span>
+          <h2>Built around what riders and customers actually want.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature reveal">
+            <div class="f-icon">💸</div>
+            <h3>Lower prices, always</h3>
+            <p>Low base fares, low per-km rates and zero surge. What you see before you book is what you pay.</p>
+          </article>
+          <article class="feature reveal" style="--d:.06s">
+            <div class="f-icon">🛵</div>
+            <h3>More riders than customers</h3>
+            <p>Smart supply balancing keeps riders available in every neighbourhood, at every hour.</p>
+          </article>
+          <article class="feature reveal" style="--d:.12s">
+            <div class="f-icon">⏱️</div>
+            <h3>Ride on time, or credit back</h3>
+            <p>If your rider is 5+ minutes later than the quoted ETA, credit lands in your wallet automatically.</p>
+          </article>
+          <article class="feature reveal" style="--d:.18s">
+            <div class="f-icon">🤖</div>
+            <h3>24×7 AI support</h3>
+            <p>Our AI assistant instantly handles rides, payments, delays, refunds and rider issues. No hold music.</p>
+          </article>
+          <article class="feature reveal" style="--d:.24s">
+            <div class="f-icon">🛡️</div>
+            <h3>Safety built in</h3>
+            <p>Verified riders, trip sharing, an in-ride SOS button and ride OTP on every trip.</p>
+          </article>
+          <article class="feature reveal" style="--d:.3s">
+            <div class="f-icon">🧾</div>
+            <h3>Fully transparent fares</h3>
+            <p>Base + distance + time. Nothing hidden, nothing surprising. Full breakdown on every receipt.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section" id="pricing">
+      <div class="container pricing-grid">
+        <div class="reveal">
+          <span class="eyebrow">Pricing</span>
+          <h2>See the difference in your pocket.</h2>
+          <p class="sub">Slide the distance and pick a ride type. We compare Vimaan's fixed fare with a typical peak-time market fare.</p>
+          <ul class="checks">
+            <li>No surge, no peak-hour premium</li>
+            <li>No hidden booking or "convenience" fees</li>
+            <li>Weekly rider-pass discounts for regular commuters</li>
+          </ul>
+        </div>
+        <div class="calc-card reveal" style="--d:.1s">
+          <div class="calc-row">
+            <label for="rideSelect">Ride type</label>
+            <select id="rideSelect"></select>
+          </div>
+          <div class="calc-row">
+            <label for="kmRange">Distance <strong id="kmVal">8 km</strong></label>
+            <input type="range" id="kmRange" min="1" max="40" value="8">
+          </div>
+          <div class="compare">
+            <div class="cmp">
+              <div class="cmp-top"><span>Typical peak fare</span><strong id="typicalFare">₹—</strong></div>
+              <div class="cmp-bar"><i id="barTypical" class="muted"></i></div>
+            </div>
+            <div class="cmp">
+              <div class="cmp-top"><span>Vimaan fare</span><strong id="vimaanFare">₹—</strong></div>
+              <div class="cmp-bar"><i id="barVimaan"></i></div>
+            </div>
+          </div>
+          <div class="save-banner" id="saveText">You save ₹—</div>
+          <p class="fine">Comparison is illustrative: "typical peak fare" is modelled at roughly 1.4× Vimaan's fixed fare.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ON TIME ============ -->
+    <section class="section dark" id="ontime">
+      <div class="container ontime-grid">
+        <div class="reveal">
+          <span class="eyebrow light">On-time promise</span>
+          <h2>A ride exactly when you need it.</h2>
+          <p class="sub light">We match you with the nearest available rider in seconds, track the ETA live, and back it with a guarantee.</p>
+          <ol class="steps">
+            <li><b>1</b><div><h3>Instant match</h3><p>Nearest rider assigned in under 10 seconds on average.</p></div></li>
+            <li><b>2</b><div><h3>Live ETA tracking</h3><p>Watch your rider approach in real time, with a masked call if needed.</p></div></li>
+            <li><b>3</b><div><h3>Late? We pay you back</h3><p>5+ minutes past the ETA? ₹50 credit is added to your wallet automatically.</p></div></li>
+          </ol>
+        </div>
+        <div class="ring-card reveal" style="--d:.12s">
+          <svg viewBox="0 0 140 140" class="ring" aria-hidden="true">
+            <circle cx="70" cy="70" r="52" class="ring-bg"/>
+            <circle cx="70" cy="70" r="52" class="ring-fg"/>
+          </svg>
+          <div class="ring-center"><strong>97.4%</strong><span>on-time pickups*</span></div>
+          <ul class="ring-list">
+            <li><span class="live-dot"></span> Average pickup: <b>3.8 min</b></li>
+            <li><span class="live-dot"></span> Average match: <b>8 sec</b></li>
+            <li><span class="live-dot"></span> Rides covered by promise: <b>100%</b></li>
+          </ul>
+          <p class="fine light">*Sample figures for design purposes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it works</span>
+          <h2>Three taps. Zero waiting.</h2>
+        </div>
+        <div class="how-grid">
+          <div class="how reveal"><span class="n">01</span><h3>Set your trip</h3><p>Enter pickup and drop. See the fixed fare for every ride type instantly.</p></div>
+          <div class="how reveal" style="--d:.08s"><span class="n">02</span><h3>Get matched</h3><p>A verified rider nearby accepts in seconds. Share the OTP to start.</p></div>
+          <div class="how reveal" style="--d:.16s"><span class="n">03</span><h3>Ride &amp; pay</h3><p>Pay by UPI, card, cash or wallet. Rate your rider and you're done.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DRIVE ============ -->
+    <section class="section alt-bg" id="drive">
+      <div class="container drive-grid">
+        <div class="reveal">
+          <span class="eyebrow">For riders</span>
+          <h2>Earn more. Keep more.</h2>
+          <p class="sub">Low flat commission, weekly payouts and steady demand so you're never idle. Estimate your monthly earnings.</p>
+          <div class="calc-card flat">
+            <div class="calc-row">
+              <label for="rpd">Rides per day <strong id="rpdVal">14</strong></label>
+              <input type="range" id="rpd" min="4" max="30" value="14">
+            </div>
+            <div class="calc-row">
+              <label for="afare">Average fare <strong id="afareVal">₹120</strong></label>
+              <input type="range" id="afare" min="40" max="400" step="5" value="120">
+            </div>
+          </div>
+        </div>
+        <div class="earn-card reveal" style="--d:.1s">
+          <span class="est-label">Estimated monthly earnings</span>
+          <strong class="earn-num" id="earnOut">₹—</strong>
+          <p id="earnKeep">You keep 92% of every fare.</p>
+          <ul class="checks light">
+            <li>Only 8% flat commission</li>
+            <li>Weekly payouts, instant cash-out option</li>
+            <li>Ride demand balanced so you wait less</li>
+            <li>Free accident &amp; health cover</li>
+          </ul>
+          <a class="btn btn-light btn-block" href="#" data-open-chat data-chat-prefill="How do I register as a rider?">Become a rider</a>
+          <p class="fine light">Estimate = rides × fare × 26 days × 92%.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SUPPORT ============ -->
+    <section class="section" id="support">
+      <div class="container support-card reveal">
+        <div class="support-copy">
+          <span class="eyebrow">AI customer support</span>
+          <h2>Any issue. Instant answers. 24×7.</h2>
+          <p>Vimaan's AI assistant resolves questions about rides, payments, refunds, delays, safety, lost items and rider or customer issues — with no queues and no waiting.</p>
+          <div class="topic-row">
+            <button class="topic" data-open-chat data-chat-prefill="My rider is late">🕒 Rider is late</button>
+            <button class="topic" data-open-chat data-chat-prefill="I want a refund">💳 Refund</button>
+            <button class="topic" data-open-chat data-chat-prefill="Payment failed but money was deducted">⚠️ Payment failed</button>
+            <button class="topic" data-open-chat data-chat-prefill="I lost an item in my ride">🎒 Lost item</button>
+            <button class="topic" data-open-chat data-chat-prefill="I was overcharged">🧾 Wrong fare</button>
+          </div>
+          <button class="btn btn-primary btn-lg" data-open-chat>Chat with Vimaan AI</button>
+        </div>
+        <div class="support-demo" aria-hidden="true">
+          <div class="msg user demo">My rider is taking too long 😤</div>
+          <div class="msg bot demo">Sorry about that! I can see your rider is 2 min away. If pickup goes 5+ min past your ETA, ₹50 credit is added automatically.</div>
+          <div class="msg user demo">Great, thanks!</div>
+          <div class="msg bot demo">Anytime. Safe ride! 🚗</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section alt-bg" id="faq">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Quick answers</h2>
+        </div>
+        <div class="faq reveal">
+          <details><summary>How is Vimaan cheaper than other ride apps?</summary><p>We run a lean platform, charge riders a low flat commission and never apply surge pricing, so the savings go straight to you.</p></details>
+          <details><summary>Will I always find a ride?</summary><p>Yes. We keep more riders online than customers in every zone and rebalance continuously. If no rider is found, you are never charged.</p></details>
+          <details><summary>What if my rider is late?</summary><p>If pickup is 5+ minutes after the quoted ETA, we add ₹50 to your wallet automatically.</p></details>
+          <details><summary>Who handles customer support?</summary><p>Our AI assistant, available 24×7 for every kind of rider and customer issue. It resolves refunds, fare disputes, delays and more instantly.</p></details>
+          <details><summary>Which payment methods are supported?</summary><p>UPI, debit/credit cards, net banking, Vimaan Wallet and cash.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="container cta-inner reveal">
+        <h2>Your next ride is minutes away.</h2>
+        <p>Cheaper fares. More riders. On time, every time.</p>
+        <a class="btn btn-light btn-lg" href="#book">Book a ride</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container foot-grid">
+      <div>
+        <a class="logo light" href="#top"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11.5 21 3l-6 18-3.2-7.8z" fill="#fff"/></svg></span><span class="logo-text">vimaan</span></a>
+        <p class="foot-note">Affordable rides, always on time.</p>
+      </div>
+      <div><h4>Company</h4><a href="#features">About</a><a href="#drive">Drive with us</a><a href="#faq">FAQ</a></div>
+      <div><h4>Rides</h4><a href="#rides">Bike</a><a href="#rides">Auto</a><a href="#rides">Mini &amp; Sedan</a></div>
+      <div><h4>Support</h4><a href="#support">AI assistant</a><a href="#ontime">On-time promise</a><a href="#pricing">Pricing</a></div>
+    </div>
+    <div class="container foot-bottom">© 2026 Vimaan. All rights reserved.</div>
+  </footer>
+
+  <!-- ============ RIDE MODAL ============ -->
+  <div class="modal" id="rideModal" data-stage="search" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close" data-close>✕</button>
+
+      <div class="stage stage-search">
+        <div class="radar" aria-hidden="true"><i></i><i></i><i></i><span>🚗</span></div>
+        <h3 id="modalTitle">Finding your rider…</h3>
+        <p class="muted-text">Matching you with the nearest available rider.</p>
+      </div>
+
+      <div class="stage stage-found">
+        <div class="found-head">
+          <span class="tag-green">Rider confirmed</span>
+          <span class="ride-id" id="rideIdText">VM000000</span>
+        </div>
+        <div class="driver">
+          <div class="avatar" id="driverAvatar">R</div>
+          <div class="driver-info">
+            <strong id="driverName">Rider</strong>
+            <span id="driverMeta">—</span>
+          </div>
+          <div class="rating">★ <span id="driverRating">4.9</span></div>
+        </div>
+        <div class="eta">
+          <div class="eta-top"><span id="statusLine">Rider is on the way</span><strong><span id="etaMin">3</span> min</strong></div>
+          <svg class="mini-route" viewBox="0 0 300 120" aria-hidden="true">
+            <path id="routePath" d="M20 95 C 80 15, 170 150, 280 30" fill="none"/>
+            <circle cx="280" cy="30" r="8" class="dest"/>
+            <circle id="routeDot" r="8" cx="20" cy="95"/>
+          </svg>
+          <div class="eta-bar"><i id="etaBar"></i></div>
+        </div>
+        <div class="trip-info">
+          <div><span>Trip</span><b id="rideRoute">—</b></div>
+          <div><span>Fixed fare</span><b id="ridePrice">₹—</b></div>
+          <div><span>Ride OTP</span><b class="otp" id="rideOtp">0000</b></div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-outline" id="cancelRide">Cancel ride</button>
+          <button class="btn btn-primary" id="modalChat">Need help?</button>
+        </div>
+        <p class="fine" id="foundNote">Free cancellation within 2 minutes. Late pickup earns you ₹50 credit.</p>
+      </div>
+
+      <div class="stage stage-done">
+        <div class="done-icon">✓</div>
+        <h3 id="doneTitle">Ride cancelled</h3>
+        <p class="muted-text" id="doneText">No charges applied.</p>
+        <button class="btn btn-primary btn-block" data-close>Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ AI CHAT ============ -->
+  <button class="chat-fab" id="chatFab" aria-label="Open Vimaan AI support chat" aria-expanded="false" aria-controls="chat">
+    <svg class="i-chat" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+    <svg class="i-x" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    <span class="fab-dot"></span>
+  </button>
+
+  <section class="chat" id="chat" aria-label="Vimaan AI support chat" aria-hidden="true">
+    <header class="chat-head">
+      <div class="chat-avatar" aria-hidden="true">✦</div>
+      <div class="chat-title">
+        <strong>Vimaan AI</strong>
+        <span><i class="live-dot"></i> Online · replies instantly</span>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>
+    </header>
+    <div class="chat-body" id="chatBody" aria-live="polite"></div>
+    <div class="chat-suggest" id="chatSuggest"></div>
+    <form class="chat-form" id="chatForm" autocomplete="off">
+      <label class="sr-only" for="chatInput">Message</label>
+      <input id="chatInput" placeholder="Ask about rides, payments, delays…" maxlength="500">
+      <button type="submit" aria-label="Send message">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+      </button>
+    </form>
+    <p class="chat-note">AI assistant · can make mistakes. In an emergency call 112.</p>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
